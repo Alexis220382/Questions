@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+       <class name="com.sssss.entity.Result" table="result">
+              <id column="id" name="id" type="java.lang.Integer" />
+              <property column="login" name="login" type="java.lang.String" />
+              <property column="question1" name="question1" type="java.lang.String" />
+              <property column="question2" name="question2" type="java.lang.String" />
+              <property column="question3" name="question3" type="java.lang.String" />
+              <property column="question4" name="question4" type="java.lang.String" />
+              <property column="question5" name="question5" type="java.lang.String" />
+              <property column="question6" name="question6" type="java.lang.String" />
+              <property column="question7" name="question7" type="java.lang.String" />
+              <property column="question8" name="question8" type="java.lang.String" />
+              <property column="res" name="res" type="java.lang.String" />
+       </class>
+</hibernate-mapping>

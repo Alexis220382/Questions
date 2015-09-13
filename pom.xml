@@ -10,31 +10,11 @@
     <packaging>war</packaging>
 
     <dependencies>
+        <!-- ============================== SPRING START =================================== -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <version>4.2.0.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.10</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>3.0.1</version>
-        </dependency>
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.36</version>
-        </dependency>
-        <dependency>
-            <groupId>jstl</groupId>
-            <artifactId>jstl</artifactId>
-            <version>1.2</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -42,29 +22,67 @@
             <version>4.2.0.RELEASE</version>
         </dependency>
         <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-commons-annotations</artifactId>
-            <version>3.2.0.Final</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>4.2.0.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>4.2.1.RELEASE</version>
+        </dependency>
+        <!-- ============================== SPRING END =================================== -->
+        <!-- =========================== HIBERNATE START ================================= -->
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts2-core</artifactId>
+            <version>2.3.16</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts2-convention-plugin</artifactId>
+            <version>2.3.8</version>
         </dependency>
         <dependency>
             <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>4.2.2.Final</version>
+            <artifactId>hibernate-annotations</artifactId>
+            <version>3.5.6-Final</version>
         </dependency>
         <dependency>
             <groupId>org.hibernate.javax.persistence</groupId>
             <artifactId>hibernate-jpa-2.0-api</artifactId>
             <version>1.0.1.Final</version>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>org.apache.tomcat</groupId>-->
-            <!--<artifactId>tomcat-jdbc</artifactId>-->
-            <!--<version>8.0.24</version>-->
-        <!--</dependency>-->
+        <!--=========================== HIBERNATE END =================================-->
+        <!-- =========================== DATASOURCE START ================================ -->
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-orm</artifactId>
-            <version>4.2.0.RELEASE</version>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.17</version>
+        </dependency>
+        <!-- ============================ DATASOURCE END ================================= -->
+        <!-- ============================ TEST START ================================= -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- ============================ TEST END ================================= -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.4</version>
         </dependency>
         <dependency>
             <groupId>com.mchange</groupId>
@@ -72,201 +90,25 @@
             <version>0.9.5.1</version>
         </dependency>
         <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-annotations</artifactId>
-            <version>3.5.6-Final</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.12</version>
-        </dependency>
-        <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
-            <version>1.7.12</version>
+            <version>1.5.5</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
-            <version>1.7.12</version>
+            <version>1.5.5</version>
         </dependency>
         <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-entitymanager</artifactId>
-            <version>5.0.0.CR4</version>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-validator</artifactId>
-            <version>5.2.1.Final</version>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.5.5</version>
         </dependency>
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
             <version>1.2.17</version>
         </dependency>
-
-
-
-
-
-
-        <!--&lt;!&ndash; ============================== SPRING START =================================== &ndash;&gt;-->
-        <!--&lt;!&ndash; Core utilities used by other modules. Define this if you use Spring-->
-            <!--Utility APIs (org.springframework.core.*/org.springframework.util.*) &ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework</groupId>-->
-            <!--<artifactId>spring-core</artifactId>-->
-            <!--<version>4.2.0.RELEASE</version>-->
-        <!--</dependency>-->
-        <!--&lt;!&ndash; Expression Language (depends on spring-core) Define this if you use-->
-            <!--Spring Expression APIs (org.springframework.expression.*) &ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework</groupId>-->
-            <!--<artifactId>spring-expression</artifactId>-->
-            <!--<version>4.2.0.RELEASE</version>-->
-        <!--</dependency>-->
-        <!--&lt;!&ndash; Bean Factory and JavaBeans utilities (depends on spring-core) Define-->
-            <!--this if you use Spring Bean APIs (org.springframework.beans.*) &ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework</groupId>-->
-            <!--<artifactId>spring-beans</artifactId>-->
-            <!--<version>4.2.0.RELEASE</version>-->
-        <!--</dependency>-->
-        <!--&lt;!&ndash; Various Application Context utilities, including EhCache, JavaMail,-->
-            <!--Quartz, and Freemarker integration Define this if you need any of these integrations &ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework</groupId>-->
-            <!--<artifactId>spring-context-support</artifactId>-->
-            <!--<version>4.2.0.RELEASE</version>-->
-        <!--</dependency>-->
-        <!--&lt;!&ndash; Transaction Management Abstraction (depends on spring-core, spring-beans,-->
-            <!--spring-aop, spring-context) Define this if you use Spring Transactions or-->
-            <!--DAO Exception Hierarchy (org.springframework.transaction.*/org.springframework.dao.*) &ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework</groupId>-->
-            <!--<artifactId>spring-tx</artifactId>-->
-            <!--<version>4.2.0.RELEASE</version>-->
-        <!--</dependency>-->
-        <!--&lt;!&ndash; JDBC Data Access Library (depends on spring-core, spring-beans, spring-context,-->
-            <!--spring-tx) Define this if you use Spring's JdbcTemplate API (org.springframework.jdbc.*) &ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework</groupId>-->
-            <!--<artifactId>spring-jdbc</artifactId>-->
-            <!--<version>4.2.0.RELEASE</version>-->
-        <!--</dependency>-->
-        <!--&lt;!&ndash; Object-to-Relation-Mapping (ORM) integration with Hibernate, JPA,-->
-            <!--and iBatis. (depends on spring-core, spring-beans, spring-context, spring-tx)-->
-            <!--Define this if you need ORM (org.springframework.orm.*) &ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework</groupId>-->
-            <!--<artifactId>spring-orm</artifactId>-->
-            <!--<version>4.2.0.RELEASE</version>-->
-        <!--</dependency>-->
-        <!--&lt;!&ndash; Web application development utilities applicable to both Servlet and-->
-            <!--Portlet Environments (depends on spring-core, spring-beans, spring-context)-->
-            <!--Define this if you use Spring MVC, or wish to use Struts, JSF, or another-->
-            <!--web framework with Spring (org.springframework.web.*) &ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework</groupId>-->
-            <!--<artifactId>spring-web</artifactId>-->
-            <!--<version>4.2.0.RELEASE</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework</groupId>-->
-            <!--<artifactId>spring-hibernate3</artifactId>-->
-            <!--<version>2.0.8</version>-->
-            <!--&lt;!&ndash;<exclusions> <exclusion> <artifactId>hibernate</artifactId> <groupId>org.hibernate</groupId>-->
-                <!--</exclusion> </exclusions> &ndash;&gt;-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>javax.servlet</groupId>-->
-            <!--<artifactId>servlet-api</artifactId>-->
-            <!--<version>2.5</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework</groupId>-->
-            <!--<artifactId>spring-webmvc</artifactId>-->
-            <!--<version>4.2.0.RELEASE</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.apache.tomcat</groupId>-->
-            <!--<artifactId>tomcat-jdbc</artifactId>-->
-            <!--<version>8.0.24</version>-->
-        <!--</dependency>-->
-
-        <!--&lt;!&ndash; ============================== SPRING END =================================== &ndash;&gt;-->
-        <!--&lt;!&ndash; =========================== DATASOURCE START ================================ &ndash;&gt;-->
-        <!--&lt;!&ndash; JDBC Drivers &ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>mysql</groupId>-->
-            <!--<artifactId>mysql-connector-java</artifactId>-->
-            <!--<version>5.1.36</version>-->
-        <!--</dependency>-->
-        <!--&lt;!&ndash; ============================ DATASOURCE END ================================= &ndash;&gt;-->
-        <!--&lt;!&ndash; =========================== HIBERNATE START ================================= &ndash;&gt;-->
-        <!--&lt;!&ndash; Hibernate framework &ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>org.hibernate</groupId>-->
-            <!--<artifactId>hibernate-core</artifactId>-->
-            <!--<version>4.3.11.Final</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.hibernate</groupId>-->
-            <!--<artifactId>hibernate-entitymanager</artifactId>-->
-            <!--<version>4.3.11.Final</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.hibernate</groupId>-->
-            <!--<artifactId>hibernate-annotations</artifactId>-->
-            <!--<version>3.5.6-Final</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.hibernate</groupId>-->
-            <!--<artifactId>ejb3-persistence</artifactId>-->
-            <!--<version>1.0.2.GA</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.hibernate</groupId>-->
-            <!--<artifactId>hibernate-ehcache</artifactId>-->
-            <!--<version>4.3.11.Final</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.hibernate</groupId>-->
-            <!--<artifactId>hibernate</artifactId>-->
-            <!--<version>3.2.7.ga</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>javax.transaction</groupId>-->
-            <!--<artifactId>jta</artifactId>-->
-            <!--<version>1.1</version>-->
-        <!--</dependency>-->
-
-        <!--<dependency>-->
-            <!--<groupId>junit</groupId>-->
-            <!--<artifactId>junit</artifactId>-->
-            <!--<version>4.10</version>-->
-            <!--<scope>test</scope>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>javax.servlet</groupId>-->
-            <!--<artifactId>javax.servlet-api</artifactId>-->
-            <!--<version>3.0.1</version>-->
-        <!--</dependency>-->
-
-        <!--<dependency>-->
-            <!--<groupId>jstl</groupId>-->
-            <!--<artifactId>jstl</artifactId>-->
-            <!--<version>1.2</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>commons-beanutils</groupId>-->
-            <!--<artifactId>commons-beanutils</artifactId>-->
-            <!--<version>1.7.0</version>-->
-        <!--</dependency>-->
-
 
     </dependencies>
 

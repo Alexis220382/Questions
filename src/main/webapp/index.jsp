@@ -5,6 +5,6 @@
     <title></title>
 </head>
 <body>
-<c:redirect url="test.jsp" />
+<jsp:forward page="test.jsp" />
 </body>
 </html>

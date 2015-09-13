@@ -3,7 +3,9 @@
 
 <hibernate-mapping>
        <class name="com.sssss.entity.Result" table="result">
-              <id column="id" name="id" type="java.lang.Integer" />
+              <id column="id" name="id" type="java.lang.Integer">
+                  <generator class="increment" />
+              </id>
               <property column="login" name="login" type="java.lang.String" />
               <property column="question1" name="question1" type="java.lang.String" />
               <property column="question2" name="question2" type="java.lang.String" />

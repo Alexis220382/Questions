@@ -1,0 +1,7 @@
+<b>3. Что в огне не горит и в воде не тонет?</b><br />
+    <input type="radio" name="water" value="wood"> Дерево<br />
+    <input type="radio" name="water" value="ice"> Лед<br />
+    <input type="radio" name="water" value="shit"> Экскременты<br />
+<input type="button" name="button4" value="Следующий вопрос" onclick="start()" /><br />
+Отвечено на 2 вопроса.<br />
+Осталось ответить на 6 вопросов.

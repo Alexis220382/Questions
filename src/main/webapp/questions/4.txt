@@ -1,0 +1,7 @@
+<b>4. Что нужно делать, когда видишь зелёного человечка?</b><br />
+    <input type="radio" name="greenman" value="gohome"> Спрятаться дома и ждать пока он не уйдет<br />
+    <input type="radio" name="greenman" value="goinhospital"> Идти к наркологу<br />
+    <input type="radio" name="greenman" value="gothrowroad"> Переходить улицу (это рисунок на зеленом сигнале светофора)<br />
+<input type="submit" name="ok" value="Следующий вопрос" /><br />
+Отвечено на 3 вопроса.<br />
+Осталось ответить на 5 вопросов.

@@ -1,0 +1,7 @@
+<b>2. Что можно видеть с закрытыми глазами?</b><br />
+    <input type="radio" name="closeeyes" value="dreams"> Сны<br />
+    <input type="radio" name="closeeyes" value="nothing"> Ничего<br />
+    <input type="radio" name="closeeyes" value="bloodmagistral"> Кровеносные сосуды<br />
+<input type="button" name="button3" value="Следующий вопрос" onclick="start()" /><br />
+Отвечено на 1 вопрос.<br />
+Осталось ответить на 7 вопросов.

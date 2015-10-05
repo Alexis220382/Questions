@@ -1,0 +1,7 @@
+<b>5. Назовите пять дней, не называя чисел (intro.html, 2, 3,..) и названий дней (понедельник, вторник, среда…)?</b><br />
+    <input type="radio" name="dayofweek" value="impossible"> Это не выполнимо<br />
+    <input type="radio" name="dayofweek" value="yeaterday"> Позавчера, вчера, сегодня, завтра, послезавтра<br />
+    <input type="radio" name="dayofweek" value="holyday"> Предпредвыходной, предвыходной, выходной, послевыходной, послепослевыходной<br
+<input type="submit" name="ok" value="Следующий вопрос" /><br />
+Отвечено на 4 вопроса.<br />
+Осталось ответить на 4 вопроса.

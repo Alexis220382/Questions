@@ -1,0 +1,7 @@
+<b>8. Сколько будет 2+2*2?</b><br />
+    <input type="radio" name="howmuch" value="six"> 6<br />
+    <input type="radio" name="howmuch" value="eight"> 8<br />
+    <input type="radio" name="howmuch" value="ten"> 10<br />
+<input type="submit" name="ok" value="Посмотреть результаты теста" /><br />
+Отвечено на 7 вопросов.<br />
+Осталось ответить на 1 вопросов.

@@ -1,0 +1,7 @@
+<b>6. Из какой посуды нельзя ничего поесть?</b><br />
+    <input type="radio" name="utensils" value="dirty"> Из грязной<br />
+    <input type="radio" name="utensils" value="thin"> С тонким горлом<br />
+    <input type="radio" name="utensils" value="empty"> Из пустой<br />
+<input type="submit" name="ok" value="Следующий вопрос" /><br />
+Отвечено на 5 вопросов.<br />
+Осталось ответить на 3 вопроса.

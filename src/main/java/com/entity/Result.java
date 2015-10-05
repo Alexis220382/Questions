@@ -1,4 +1,4 @@
-package com.sssss.entity;
+package com.entity;
 
 import javax.persistence.*;
 
@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Result {
 
     @Id
-    @Column(name= "id")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     @Column(name = "login", nullable = false)

@@ -1,0 +1,7 @@
+<b>7. На какой вопрос нельзя ответить «нет»?</b><br />
+    <input type="radio" name="no" value="run"> Ты бежишь?<br />
+    <input type="radio" name="no" value="here"> Ты здесь?<br />
+    <input type="radio" name="no" value="alive"> Ты жив?<br />
+<input type="submit" name="ok" value="Следующий вопрос" /><br />
+Отвечено на 6 вопросов.<br />
+Осталось ответить на 2 вопроса.

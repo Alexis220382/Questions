@@ -1,0 +1,7 @@
+<b>1. В некоторых месяцах 30 дней, в некоторых 31. В скольких месяцах в году 28 дней?</b><br />
+    <input type="radio" name="month" value="inallmonth"> Во всех месяцах<br />
+    <input type="radio" name="month" value="february"> В одном феврале<br />
+    <input type="radio" name="month" value="infour"> В четырех<br />
+<input type="button" name="button2" value="Следующий вопрос" onclick="start()" /><br />
+Отвечено на 0 вопросов.<br />
+Осталось ответить на 8 вопросов.

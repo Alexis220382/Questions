@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-       <class name="com.sssss.entity.Result" table="result">
+       <class name="com.entity.Result" table="result">
               <id column="id" name="id" type="java.lang.Integer">
                   <generator class="increment" />
               </id>

@@ -2,6 +2,7 @@
 <html>
 <head>
     <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <script type="text/javascript" src="js/start.js"></script>
 </head>
 <body>
@@ -13,7 +14,7 @@
             && request.getParameter("button6") == null
             && request.getParameter("button7") == null
             && request.getParameter("button8") == null){%>
-        <form action="/asd.form">
+        <form action="/attribute.form">
             <p>В Германии существует тест для тех людей, кто попался пьяным за рулём. <br />
                 Это так называемый тест на идиотизм. Редко кто его сдаёт без подготовки. <br />
                 На этом определённые фирмы делают деньги, подготавливая попавшихся к сдаче. <br />

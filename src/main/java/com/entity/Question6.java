@@ -3,8 +3,8 @@ package com.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "questions")
-public class Question {
+@Table(name = "question6")
+public class Question6 {
 
     @Id
     @Column(name = "id")
@@ -14,7 +14,7 @@ public class Question {
     @Column(name = "description", nullable = false)
     private String description;
 
-    public Question() {
+    public Question6() {
 
     }
 

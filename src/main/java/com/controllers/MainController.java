@@ -1,6 +1,6 @@
 package com.controllers;
 
-import com.entity.Result;
+import com.entity.*;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -11,15 +11,26 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
+import javax.servlet.http.HttpServletResponse;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 @Controller
 public class MainController {
 
+    Login login = null;
+    Question1 question1 = null;
+    Question2 question2 = null;
+    Question3 question3 = null;
+    Question4 question4 = null;
+    Question5 question5 = null;
+    Question6 question6 = null;
+    Question7 question7 = null;
+    Question8 question8 = null;
 
-    @RequestMapping(value = "/mine", method = RequestMethod.GET)
-    public ModelAndView myTest(HttpServletRequest request) {
+
+    @RequestMapping(value = "/result", method = RequestMethod.GET)
+    public ModelAndView myResult(HttpServletRequest request, HttpServletResponse response) {
 
         ModelAndView modelAndView = new ModelAndView();
 
@@ -29,150 +40,35 @@ public class MainController {
         Transaction tx = session.beginTransaction();
 
 
-        Result result = null;
 
-        if (request.getSession().getAttribute("login") == null
-                || request.getSession().getAttribute("month") == null
-                || request.getSession().getAttribute("closeeyes") == null
-                || request.getSession().getAttribute("water") == null
-                || request.getSession().getAttribute("greenman") == null
-                || request.getSession().getAttribute("dayofweek") == null
-                || request.getSession().getAttribute("utensils") == null
-                || request.getSession().getAttribute("no") == null
-                || request.getSession().getAttribute("howmuch") == null) {
-            modelAndView.setViewName("empty");
-        } else {
-
-            if (request.getSession().getAttribute("month").equals("inallmonth")
-                    && request.getSession().getAttribute("closeeyes").equals("dreams")
-                    && request.getSession().getAttribute("water").equals("ice")
-                    && request.getSession().getAttribute("greenman").equals("gothrowroad")
-                    && request.getSession().getAttribute("dayofweek").equals("yeaterday")
-                    && request.getSession().getAttribute("utensils").equals("empty")
-                    && request.getSession().getAttribute("no").equals("alive")
-                    && request.getSession().getAttribute("howmuch").equals("six")) {
-
-                result = new Result();
-                result.setLogin((String) request.getSession().getAttribute("login"));
-                result.setQuestion1((String) request.getSession().getAttribute("month"));
-                result.setQuestion2((String) request.getSession().getAttribute("closeeyes"));
-                result.setQuestion3((String) request.getSession().getAttribute("water"));
-                result.setQuestion4((String) request.getSession().getAttribute("greenman"));
-                result.setQuestion5((String) request.getSession().getAttribute("dayofweek"));
-                result.setQuestion6((String) request.getSession().getAttribute("utensils"));
-                result.setQuestion7((String) request.getSession().getAttribute("no"));
-                result.setQuestion8((String) request.getSession().getAttribute("howmuch"));
-                result.setRes("ok");
-
-                modelAndView.setViewName("result");
-            } else {
-                result = new Result();
-                result.setLogin((String) request.getSession().getAttribute("login"));
-                result.setQuestion1((String) request.getSession().getAttribute("month"));
-                result.setQuestion2((String) request.getSession().getAttribute("closeeyes"));
-                result.setQuestion3((String) request.getSession().getAttribute("water"));
-                result.setQuestion4((String) request.getSession().getAttribute("greenman"));
-                result.setQuestion5((String) request.getSession().getAttribute("dayofweek"));
-                result.setQuestion6((String) request.getSession().getAttribute("utensils"));
-                result.setQuestion7((String) request.getSession().getAttribute("no"));
-                result.setQuestion8((String) request.getSession().getAttribute("howmuch"));
-                result.setRes("it's not ok");
-
-                modelAndView.setViewName("resbad");
-            }
+        if (request.getParameter("howmuch") != null){
+            question8 = new Question8();
+            question8.setDescription(request.getParameter("howmuch"));
+            session.save(question8);
         }
 
-//        Result result = null;
-//
-//        if (request.getParameter("login") == null
-//                || request.getParameter("month") == null
-//                || request.getParameter("closeeyes") == null
-//                || request.getParameter("water") == null
-//                || request.getParameter("greenman") == null
-//                || request.getParameter("dayofweek") == null
-//                || request.getParameter("utensils") == null
-//                || request.getParameter("no") == null
-//                || request.getParameter("howmuch") == null) {
-//            modelAndView.setViewName("empty");
-//        } else {
-//
-//            if (request.getParameter("month").equals("inallmonth")
-//                    && request.getParameter("closeeyes").equals("dreams")
-//                    && request.getParameter("water").equals("ice")
-//                    && request.getParameter("greenman").equals("gothrowroad")
-//                    && request.getParameter("dayofweek").equals("yeaterday")
-//                    && request.getParameter("utensils").equals("empty")
-//                    && request.getParameter("no").equals("alive")
-//                    && request.getParameter("howmuch").equals("six")) {
-//
-//                result = new Result();
-//                result.setLogin(request.getParameter("login"));
-//                result.setQuestion1(request.getParameter("month"));
-//                result.setQuestion2(request.getParameter("closeeyes"));
-//                result.setQuestion3(request.getParameter("water"));
-//                result.setQuestion4(request.getParameter("greenman"));
-//                result.setQuestion5(request.getParameter("dayofweek"));
-//                result.setQuestion6(request.getParameter("utensils"));
-//                result.setQuestion7(request.getParameter("no"));
-//                result.setQuestion8(request.getParameter("howmuch"));
-//                result.setRes("ok");
-//
-//                modelAndView.setViewName("result");
-//            } else {
-//                result = new Result();
-//                result.setLogin(request.getParameter("login"));
-//                result.setQuestion1(request.getParameter("month"));
-//                result.setQuestion2(request.getParameter("closeeyes"));
-//                result.setQuestion3(request.getParameter("water"));
-//                result.setQuestion4(request.getParameter("greenman"));
-//                result.setQuestion5(request.getParameter("dayofweek"));
-//                result.setQuestion6(request.getParameter("utensils"));
-//                result.setQuestion7(request.getParameter("no"));
-//                result.setQuestion8(request.getParameter("howmuch"));
-//                result.setRes("it's not ok");
-//
-//                modelAndView.setViewName("resbad");
-//            }
-//        }
 
-        session.save(result);
-        tx.commit();
+            String name = (String) session.createQuery("SELECT description FROM Login").list().get(0);
+            String month = (String) session.createQuery("SELECT description FROM Question1").list().get(0);
+            String closeeyes = (String) session.createQuery("SELECT description FROM Question2").list().get(0);
+            String water = (String) session.createQuery("SELECT description FROM Question3").list().get(0);
+            String greenman = (String) session.createQuery("SELECT description FROM Question4").list().get(0);
+            String dayofweek = (String) session.createQuery("SELECT description FROM Question5").list().get(0);
+            String utensils = (String) session.createQuery("SELECT description FROM Question6").list().get(0);
+            String no = (String) session.createQuery("SELECT description FROM Question7").list().get(0);
+            String howmuch = (String) session.createQuery("SELECT description FROM Question8").list().get(0);
 
-        session.close();
-
-        return modelAndView;
-    }
-
-    @RequestMapping(value = "/asd", method = RequestMethod.GET)
-    public ModelAndView myAjax(HttpServletRequest request) {
-
-        ModelAndView modelAndView = new ModelAndView();
-
-        Configuration configuration = new Configuration().configure();
-        SessionFactory sessionFactory = configuration.buildSessionFactory();
-        Session session = sessionFactory.openSession();
-        Transaction tx = session.beginTransaction();
-
-        List list = new ArrayList();
-
-        String login = (String) request.getSession().getAttribute("login");
-        String month = (String) request.getSession().getAttribute("month");
-        String closeeyes = (String) request.getSession().getAttribute("closeeyes");
-        String water = (String) request.getSession().getAttribute("water");
-        String greenman = (String) request.getSession().getAttribute("greenman");
-        String dayofweek = (String) request.getSession().getAttribute("dayofweek");
-        String utensils = (String) request.getSession().getAttribute("utensils");
-        String no = (String) request.getSession().getAttribute("no");
-        String howmuch = (String) request.getSession().getAttribute("howmuch");
-
-        System.out.println(login+" "+month+" "+closeeyes+" "+water+" "+greenman+" "+dayofweek+" "+utensils+" "+no+" "+howmuch);
-
-        if(request.getParameter("button9") != null) {
             Result result = null;
 
-            if (login == null || month == null || closeeyes == null || water == null
-                    || greenman == null || dayofweek == null || utensils == null
-                    || no == null || howmuch == null) {
+            if (name == null
+                    || month == null
+                    || closeeyes == null
+                    || water == null
+                    || greenman == null
+                    || dayofweek == null
+                    || utensils == null
+                    || no == null
+                    || howmuch == null) {
                 modelAndView.setViewName("empty");
             } else {
 
@@ -186,7 +82,7 @@ public class MainController {
                         && howmuch.equals("six")) {
 
                     result = new Result();
-                    result.setLogin(login);
+                    result.setLogin(name);
                     result.setQuestion1(month);
                     result.setQuestion2(closeeyes);
                     result.setQuestion3(water);
@@ -200,7 +96,7 @@ public class MainController {
                     modelAndView.setViewName("result");
                 } else {
                     result = new Result();
-                    result.setLogin(login);
+                    result.setLogin(name);
                     result.setQuestion1(month);
                     result.setQuestion2(closeeyes);
                     result.setQuestion3(water);
@@ -214,28 +110,95 @@ public class MainController {
                     modelAndView.setViewName("resbad");
                 }
             }
+
             session.save(result);
-        } else {
 
-            List questions = session.createQuery("SELECT description FROM Question").list();
+            session.delete(login);
+            session.delete(question1);
+            session.delete(question2);
+            session.delete(question3);
+            session.delete(question4);
+            session.delete(question5);
+            session.delete(question6);
+            session.delete(question7);
+            session.delete(question8);
 
-            request.setAttribute("questions0", questions.get(0));
-            request.setAttribute("questions1", questions.get(1));
-            request.setAttribute("questions2", questions.get(2));
-            request.setAttribute("questions3", questions.get(3));
-            request.setAttribute("questions4", questions.get(4));
-            request.setAttribute("questions5", questions.get(5));
-            request.setAttribute("questions6", questions.get(6));
-            request.setAttribute("questions7", questions.get(7));
-            request.setAttribute("questions8", questions.get(8));
-
-            modelAndView.setViewName("UseAjax");
-        }
         tx.commit();
-
 
         session.close();
 
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/attribute", method = RequestMethod.GET)
+    public ModelAndView myAttribute(HttpServletRequest request, HttpServletResponse response) {
+
+        ModelAndView modelAndView = new ModelAndView();
+
+        Configuration configuration = new Configuration().configure();
+        SessionFactory sessionFactory = configuration.buildSessionFactory();
+        Session session = sessionFactory.openSession();
+        Transaction tx = session.beginTransaction();
+
+
+        if (request.getParameter("login") != null){
+            login = new Login();
+            login.setDescription(request.getParameter("login"));
+            session.save(login);
+        }
+        if (request.getParameter("month") != null){
+            question1 = new Question1();
+            question1.setDescription(request.getParameter("month"));
+            session.save(question1);
+        }
+        if (request.getParameter("closeeyes") != null){
+            question2 = new Question2();
+            question2.setDescription(request.getParameter("closeeyes"));
+            session.save(question2);
+        }
+        if (request.getParameter("water") != null){
+            question3 = new Question3();
+            question3.setDescription(request.getParameter("water"));
+            session.save(question3);
+        }
+        if (request.getParameter("greenman") != null){
+            question4 = new Question4();
+            question4.setDescription(request.getParameter("greenman"));
+            session.save(question4);
+        }
+        if (request.getParameter("dayofweek") != null){
+            question5 = new Question5();
+            question5.setDescription(request.getParameter("dayofweek"));
+            session.save(question5);
+        }
+        if (request.getParameter("utensils") != null){
+            question6 = new Question6();
+            question6.setDescription(request.getParameter("utensils"));
+            session.save(question6);
+        }
+        if (request.getParameter("no") != null){
+            question7 = new Question7();
+            question7.setDescription(request.getParameter("no"));
+            session.save(question7);
+        }
+
+        List questions = session.createQuery("SELECT description FROM Question").list();
+
+        request.setAttribute("questions0", questions.get(0));
+        request.setAttribute("questions1", questions.get(1));
+        request.setAttribute("questions2", questions.get(2));
+        request.setAttribute("questions3", questions.get(3));
+        request.setAttribute("questions4", questions.get(4));
+        request.setAttribute("questions5", questions.get(5));
+        request.setAttribute("questions6", questions.get(6));
+        request.setAttribute("questions7", questions.get(7));
+        request.setAttribute("questions8", questions.get(8));
+
+        modelAndView.setViewName("UseAjax");
+
+        tx.commit();
+
+        session.close();
 
         return modelAndView;
     }
